@@ -130,6 +130,7 @@
             <div class="action-bar">
                 <!-- Search Bar on the Left -->
                 <div class="search-container" style="display: flex; align-items: center;">
+                    <asp:TextBox ID="SearchTextBox" runat="server" CssClass="form-control" placeholder="Search by date..." AutoPostBack="True" />
                     <asp:Button ID="SearchButton" runat="server" Text="Search" CssClass="search-btn" />
                 </div>
 
