@@ -43,6 +43,33 @@
             align-items: center;
             margin-bottom: 20px;
         }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-container input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #28a745;
+            border-radius: 5px 0 0 5px;
+            box-sizing: border-box;
+        }
+        .search-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #28a745;
+            color: white;
+            border: 2px solid #28a745;
+            transition: all 0.3s ease;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        .search-container button:hover {
+            background-color: white;
+            color: #28a745;
+            border-color: #28a745;
+        }
         .custom-btn {
             padding: 15px 30px;
             font-size: 18px;
@@ -105,7 +132,7 @@
 
                         <!-- Search Bar on the Left -->
 <div class="search-container" style="display: flex; align-items: center;">
-    <asp:TextBox ID="SearchTextBox" runat="server" CssClass="form-control" placeholder="Search by city..." AutoPostBack="True" style="flex: 1; margin-right: 10px;" OnTextChanged="SearchTextBox_TextChanged"/>
+    <asp:TextBox ID="SearchTextBox" runat="server" CssClass="form-control" placeholder="Search by city..." AutoPostBack="True"  OnTextChanged="SearchTextBox_TextChanged"/>
     <asp:Button ID="SearchButton" runat="server" Text="Search" CssClass="search-btn" OnCLick="SearchButton_Click"/>
 </div>
 

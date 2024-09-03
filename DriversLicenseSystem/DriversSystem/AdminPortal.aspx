@@ -80,9 +80,9 @@
                 <div class="custom-panel">
                     <asp:Button runat="server" CssClass="custom-btn" Text="Services" PostBackUrl="~/MantainServices.aspx" />
                     <asp:Button runat="server" CssClass="custom-btn" Text="Available Times" PostBackUrl="~/MantainAvailableTimes.aspx" />
-                    <asp:Button runat="server" CssClass="custom-btn" Text="Applications" PostBackUrl="~/MantainApplications.aspx" />
+                    <asp:Button runat="server" CssClass="custom-btn" Text="Applications" PostBackUrl="~/MaintainApplications.aspx" />
                     <asp:Button runat="server" CssClass="custom-btn" Text="Cities" PostBackUrl="~/MaintainCities.aspx" />
-                    <asp:Button runat="server" CssClass="custom-btn" Text="Clients" PostBackUrl="~/MantainClients.aspx" />
+                    <asp:Button runat="server" CssClass="custom-btn" Text="Clients" PostBackUrl="~/MaintainClients.aspx" />
                 </div>
 
             </div>
@@ -91,7 +91,7 @@
                 <h2 class="panel-heading">Reports</h2>
                 <div class="custom-panel">
                     <asp:Button runat="server" CssClass="custom-btn" Text="Number of Appointments Per Week Per Time Period" PostBackUrl="~/AdminPortal_NumAppointmentsPerWeek.aspx" />
-                    <asp:Button runat="server" CssClass="custom-btn" Text="Income Per Time Period" />
+                    <asp:Button runat="server" CssClass="custom-btn" Text="Income Per Time Period"  PostBackUrl="~/IncomeReport.aspx"/>
                 </div>
 
             </div>

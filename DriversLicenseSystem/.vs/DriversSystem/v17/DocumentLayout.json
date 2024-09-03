@@ -3,10 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ebrah\\onedrive\\documents\\uni\\code\\cmpg223project\\dltc\\driverslicensesystem\\driverssystem\\mantainavailabletimes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\mantainavailabletimes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ebrah\\onedrive\\documents\\uni\\code\\cmpg223project\\dltc\\driverslicensesystem\\driverssystem\\clientportal_viewdocument.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal_viewdocument.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\driverssystem\\mantainavailabletimes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\mantainavailabletimes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
@@ -17,6 +18,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ebrah\\onedrive\\documents\\uni\\code\\cmpg223project\\dltc\\driverslicensesystem\\driverssystem\\maintainapplications.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\maintainapplications.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+=======
+      "AbsoluteMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|c:\\users\\ebrah\\onedrive\\documents\\uni\\code\\cmpg223project\\dltc\\driverslicensesystem\\driverssystem\\clientportal_maintainapplications.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA3C36EA-A0F0-436A-A21F-E098DF8693F4}|DriversSystem\\DriversSystem.csproj|solutionrelative:driverssystem\\clientportal_maintainapplications.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -26,10 +31,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 3,
               "Title": "MaintainApplications.aspx",
               "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\MaintainApplications.aspx",
@@ -63,21 +69,30 @@
               "ToolTip": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\MantainAvailableTimes.aspx.cs",
               "RelativeToolTip": "DriversSystem\\MantainAvailableTimes.aspx.cs",
               "ViewState": "AQIAAHwAAAAAAAAAAAAYwIwAAAAyAAAA",
+=======
+              "DocumentIndex": 0,
+              "Title": "ClientPortal_ViewDocument.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\ClientPortal_ViewDocument.aspx.cs",
+              "RelativeDocumentMoniker": "DriversSystem\\ClientPortal_ViewDocument.aspx.cs",
+              "ToolTip": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\ClientPortal_ViewDocument.aspx.cs",
+              "RelativeToolTip": "DriversSystem\\ClientPortal_ViewDocument.aspx.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAA1wDYAAAAdAAAA",
+>>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T18:39:53.781Z",
+              "WhenOpened": "2024-09-03T20:23:52.072Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MantainAvailableTimes.aspx",
-              "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\MantainAvailableTimes.aspx",
-              "RelativeDocumentMoniker": "DriversSystem\\MantainAvailableTimes.aspx",
-              "ToolTip": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\MantainAvailableTimes.aspx",
-              "RelativeToolTip": "DriversSystem\\MantainAvailableTimes.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-09-01T18:39:51.751Z",
+              "Title": "ClientPortal_MaintainApplications.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\ClientPortal_MaintainApplications.aspx.cs",
+              "RelativeDocumentMoniker": "DriversSystem\\ClientPortal_MaintainApplications.aspx.cs",
+              "ToolTip": "C:\\Users\\ebrah\\OneDrive\\Documents\\Uni\\Code\\Cmpg223Project\\DLTC\\DriversLicenseSystem\\DriversSystem\\ClientPortal_MaintainApplications.aspx.cs",
+              "RelativeToolTip": "DriversSystem\\ClientPortal_MaintainApplications.aspx.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAALcAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T20:19:01.678Z",
               "EditorCaption": ""
             }
           ]

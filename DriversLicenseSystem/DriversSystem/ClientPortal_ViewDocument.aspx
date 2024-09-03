@@ -78,12 +78,23 @@
                 box-shadow: none;
                 border: none;
             }
+            .footer {
+                display: none;
+            }
             .btn-container {
                 display: none; 
             }
             @page {
                 margin: 0;
                 margin-bottom: 0;
+            }
+            body::after {
+              content: "Page 1/1";
+               display: block;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
             }
         }
     </style>

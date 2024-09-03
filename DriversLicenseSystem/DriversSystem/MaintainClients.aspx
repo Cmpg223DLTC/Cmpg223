@@ -170,7 +170,7 @@
         <asp:TemplateField HeaderText="Actions">
             <ItemTemplate>
                 <asp:Button ID="EditButton" runat="server" Text="Maintain Client" CssClass="btn btn-edit" CommandArgument='<%# Eval("Client_ID") %>'  OnClick="UpdateClientButton_Click" />
-                <asp:Button ID="AddApplicationButton" runat="server" Text="Add Application" CssClass="btn btn-add-application" CommandArgument='<%# Eval("Client_ID") %>' OnClick="AddApplicationButton_Click" />
+                <asp:Button ID="AddApplicationButton" runat="server" Text="Maintain Application" CssClass="btn btn-add-application" CommandArgument='<%# Eval("Client_ID") %>' OnClick="AddApplicationButton_Click" />
             </ItemTemplate>
         </asp:TemplateField>
     </Columns>

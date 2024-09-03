@@ -92,7 +92,7 @@ namespace DriversSystem
 
             if (result > 0)
             {
-                Response.Redirect("ClientPortal.aspx");
+                Response.Redirect("MaintainClients.aspx");
             }
         }
 

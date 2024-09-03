@@ -51,11 +51,6 @@
                         <li class="nav-item">
                             <a class="nav-link" runat="server" href="~/ClientPortal.aspx">Client Portal</a>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" runat="server" href="~/AboutUs.aspx">About</a>
-                        </li>
-
                     </ul>
                     
                 </div>

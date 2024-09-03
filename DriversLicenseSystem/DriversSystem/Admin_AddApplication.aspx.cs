@@ -119,7 +119,7 @@ namespace DriversSystem
                 if (result > 0)
                 {
                     errorAlert.Visible = false;
-                    Response.Redirect("ClientPortal_ViewDocument.aspx");
+                    Response.Redirect("MaintainApplications.aspx");
                 }
 
                 else

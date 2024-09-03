@@ -25,7 +25,7 @@ namespace DriversSystem
         {
             string userSearch = SearchTextBox.Text.Trim();
 
-            string query = "SELECT * FROM AVAILABLE_TIME WHERE AvailableTime_Date LIKE '%' + @userSearch + '%'";
+            string query = "SELECT * FROM AVAILABLE_TIME WHERE Date LIKE '%' + @userSearch + '%'";
             SqlParameter[] param =
             {
                 new SqlParameter("@userSearch", SqlDbType.VarChar, 50) { Value = userSearch }

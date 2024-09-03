@@ -48,8 +48,26 @@ namespace DriversSystem
             Button btn = (Button)sender;
             string clientId = btn.CommandArgument;
             // check if client has application
-            Session["ClientID_Admin"] = clientId;
+            string query = "SELECT Application_ID FROM Application WHERE Client_ID = @ID AND isAttended = 0";
+            SqlParameter[] param =
+            {
+                new SqlParameter("@ID", SqlDbType.Int) { Value = clientId}
+            };
+
+            DataTable dt = dbHelper.ExecuteQuery(query, param);
+
+            if (dt.Rows.Count > 0)
+            {
+                string applicationId = dt.Rows[0]["Application_ID"].ToString();
+                Session["ApplicationID"] = applicationId;
+                Response.Redirect("Admin_MaintainApplications.aspx");
+            }
+            else
+            {
+                Session["ClientID_Admin"] = clientId;
             Response.Redirect("Admin_AddApplication.aspx");
+            }
+            
         }
         protected void AddClientButton_Click(Object sender, EventArgs e)
         {
