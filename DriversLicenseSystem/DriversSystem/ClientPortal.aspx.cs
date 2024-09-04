@@ -101,5 +101,11 @@ namespace DriversSystem
             return (sum % 10 == 0); ;
 
         }
+
+        protected void bttnGetHelp_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/UserManual.aspx");
+        }
+
     }
 }

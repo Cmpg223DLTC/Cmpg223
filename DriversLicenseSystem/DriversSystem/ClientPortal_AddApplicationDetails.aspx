@@ -157,6 +157,24 @@
     text-decoration: none;
 }
 
+       .dropdown-control {
+           width: 100%;
+           padding: 10px;
+           font-size: 16px;
+           border-radius: 5px;
+           border: 1px solid #ccc;
+           background-color: white;
+           color: #333;
+           position: relative;
+           background-repeat: no-repeat;
+           background-position: right 10px center;
+       }
+
+       .dropdown-control:focus {
+           outline: none;
+           border-color: #28a745;
+       }
+
 
     </style>
         <!-- Error Alert -->
@@ -175,7 +193,7 @@
 
         <div class="form-group">
             <label for="Service" class="form-label">Select Service</label>
-            <asp:DropDownList ID="ServiceDropdown" runat="server" CssClass="form-control">
+            <asp:DropDownList ID="ServiceDropdown" runat="server" CssClass="dropdown-control">
                
             </asp:DropDownList>
         </div>

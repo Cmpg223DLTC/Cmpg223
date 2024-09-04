@@ -90,5 +90,9 @@
      <asp:Button ID="bttnEnterID" runat="server" Text="Search" OnClick="bttnIDEnter_Click" CssClass="search-btn" />
     </div>
 
+        <div class="text-center">
+            <asp:Button ID="bttnGetHelp" runat="server" Text="Get Help" OnClick="bttnGetHelp_Click" CssClass="help-btn" />
+        </div>
+
     </div>
 </asp:Content>

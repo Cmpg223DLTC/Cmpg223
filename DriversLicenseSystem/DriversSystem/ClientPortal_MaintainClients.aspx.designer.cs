@@ -204,12 +204,12 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.Button DeleteConfirmButton;
 
         /// <summary>
-        /// Button4 control.
+        /// CancelDeleteButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
+        protected global::System.Web.UI.WebControls.Button CancelDeleteButton;
     }
 }
