@@ -74,6 +74,7 @@ namespace DriversSystem
                     UpdateButton.Visible = true;
                     DeleteButton.Visible = true;
                     FormState.Enabled = false;
+                    Response.Redirect("ClientPortal_Menu.aspx");
                 }
             }
                

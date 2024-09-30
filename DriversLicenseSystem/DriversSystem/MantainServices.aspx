@@ -83,6 +83,21 @@
             border-radius: 5px;
             min-width: 200px;
         }
+        .custom-btn-delete {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: 2px solid #28a745;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    margin: 15px;
+    border-radius: 5px;
+    min-width: 200px;
+}
         .custom-btn:hover {
             background-color: white;
             color: #28a745;
@@ -214,21 +229,21 @@
         </div>
     </div>
 </div>
-
-    <!-- Delete Confirm Modal -->
-    <div class="modal fade" id="DeleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Delete Confirm Modal -->
+<div class="modal fade" id="DeleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-             <h5 class="modal-title" id="deleteconfirmLabel">Are you sure you want to delete?</h5>
+                <h5 class="modal-title" id="deleteconfirmLabel">Are you sure you want to delete?</h5>
+            </div>
             <div class="modal-footer">
-                 <asp:Button ID="Button1" runat="server" Text="Confirm Delete" CssClass="custom-btn" OnClick="DeleteServiceButton_Click" />
-                <asp:Button ID="Button4" runat="server" Text="Cancel" CssClass="custom-btn" OnClientClick="$('#DeleteConfirmModal').modal('hide'); return false;" />
-                 </div>
+                <asp:Button ID="Button1" runat="server" Text="Confirm Delete" CssClass="custom-btn-delete" OnClick="DeleteServiceButton_Click" />
+                <asp:Button ID="Button4" runat="server" Text="Cancel" CssClass="custom-btn btn-cancel" OnClientClick="$('#DeleteConfirmModal').modal('hide'); return false;" />
             </div>
         </div>
     </div>
 </div>
+
 
 
     <!-- Update Modal -->

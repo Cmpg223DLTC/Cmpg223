@@ -97,6 +97,17 @@ namespace DriversSystem
             totalAppointmentsColumn.DataField = "TotalAppointments";
             ApplicationGridView.Columns.Add(totalAppointmentsColumn);
 
+            foreach (DataRow row in resultTable.Rows)
+            {
+                int total = 0;
+                for (int i = 1; i <= totalWeeks; i++)
+                {
+                    total += Convert.ToInt32(row[$"Week{i}"]);
+                }
+                row["TotalAppointments"] = total;
+            }
+
+
             ApplicationGridView.DataBind();
         }
 

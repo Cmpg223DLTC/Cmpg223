@@ -62,6 +62,21 @@
             margin-top: 10px;
         }
 
+           .help-btn 
+   {
+       padding: 10px 20px;
+       font-size: 18px;
+       font-weight: bold;
+       background-color: dodgerblue;
+       color: white;
+       border: 2px solid dodgerblue;
+       border-radius: 5px;
+       cursor: pointer;
+       transition: all 0.3s ease;
+       display: inline-block;
+       margin-top: 10px;
+   }
+
         .search-btn:hover 
         {
             background-color: white;
