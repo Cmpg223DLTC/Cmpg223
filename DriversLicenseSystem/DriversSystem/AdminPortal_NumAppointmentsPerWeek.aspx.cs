@@ -58,50 +58,66 @@ namespace DriversSystem
         protected void populateGridView()
         {
             ApplicationGridView.Columns.Clear();
-
+            // Parse the input dates
             DateTime startDate = DateTime.Parse(startDateString);
             DateTime endDate = DateTime.Parse(endDateString);
-
+            // Calculate the total number of weeks
             int totalWeeks = (int)((endDate - startDate).TotalDays / 7) + 1;
-            totalWeeks = Math.Min(totalWeeks, 8);
+            totalWeeks = Math.Min(totalWeeks, 8);  // Limit to a maximum of 8 weeks
+                                                   // Start building the SQL query to calculate the appointments per week
+            string query = @"
+        SELECT 
+            CONCAT(CAST(t.StartTime AS VARCHAR(5)),' - ',CAST(t.EndTime AS VARCHAR(5))) AS TimeSlot,";
 
-            // Sql
-            string query = "SELECT CONCAT(CAST(StartTime AS VARCHAR(5)),' - ',CAST(EndTime AS VARCHAR(5))) AS TimeSlot,";
-
+            // Create CASE statements to calculate counts for each week
             for (int i = 0; i < totalWeeks; i++)
             {
-                query += $"SUM(CASE WHEN DATEPART(WEEK, t.Date) = DATEPART(WEEK, @StartDate) + {i} THEN 1 ELSE 0 END) AS Week{i + 1},";
+                query += $@"
+            COUNT(CASE WHEN t.Date BETWEEN @Week{i}Start AND @Week{i}End THEN a.Application_ID ELSE NULL END) AS Week{i + 1},";
             }
 
-            query += @"COUNT(a.Application_ID) AS TotalAppointments
-               FROM 
-                   Available_Time t
-               LEFT JOIN 
-                   Application a ON t.Time_ID = a.Time_ID
-               WHERE 
-                   t.Date BETWEEN @StartDate AND @EndDate
-                   AND t.StartTime BETWEEN '08:00' AND '14:00'
-               GROUP BY 
-                   t.StartTime, t.EndTime
-               ORDER BY 
-                   t.StartTime";
+            // Finish the SQL query for total appointments
+            query += @"
+        COUNT(a.Application_ID) AS TotalAppointments
+        FROM 
+            Available_Time t
+        LEFT JOIN 
+            Application a ON t.Time_ID = a.Time_ID
+        WHERE 
+            t.Date BETWEEN @StartDate AND @EndDate
+            AND t.StartTime BETWEEN '08:00:00' AND '14:00:00'
+        GROUP BY 
+            t.StartTime, t.EndTime
+        ORDER BY 
+            t.StartTime";
 
-         
-            SqlParameter[] param =
+            // Create the list of SQL parameters, including each week's start and end date
+            List<SqlParameter> parameters = new List<SqlParameter>
+    {
+        new SqlParameter("@StartDate", SqlDbType.Date) { Value = startDate },
+        new SqlParameter("@EndDate", SqlDbType.Date) { Value = endDate }
+    };
+
+            // Add parameters for each week's start and end dates
+            for (int i = 0; i < totalWeeks; i++)
             {
-                new SqlParameter("@StartDate", SqlDbType.Date) { Value = startDateString },
-                new SqlParameter("@EndDate", SqlDbType.Date) { Value = endDateString }
-            };
+                DateTime weekStart = startDate.AddDays(i * 7);
+                DateTime weekEnd = weekStart.AddDays(6);
+                parameters.Add(new SqlParameter($"@Week{i}Start", SqlDbType.Date) { Value = weekStart });
+                parameters.Add(new SqlParameter($"@Week{i}End", SqlDbType.Date) { Value = weekEnd });
+            }
 
-            DataTable resultTable = dbHelper.ExecuteQuery(query, param);
+            // Execute the query
+            DataTable resultTable = dbHelper.ExecuteQuery(query, parameters.ToArray());
             ApplicationGridView.DataSource = resultTable;
 
-            // Dynamic Columns
+            // Add Time Slot column
             BoundField timeSlotColumn = new BoundField();
             timeSlotColumn.HeaderText = "Time Slot";
             timeSlotColumn.DataField = "TimeSlot";
             ApplicationGridView.Columns.Add(timeSlotColumn);
 
+            // Add columns for each week dynamically
             for (int i = 1; i <= totalWeeks; i++)
             {
                 BoundField weekColumn = new BoundField();
@@ -110,26 +126,15 @@ namespace DriversSystem
                 ApplicationGridView.Columns.Add(weekColumn);
             }
 
+            // Add the Total Appointments column
             BoundField totalAppointmentsColumn = new BoundField();
             totalAppointmentsColumn.HeaderText = "Total Appointments";
             totalAppointmentsColumn.DataField = "TotalAppointments";
             ApplicationGridView.Columns.Add(totalAppointmentsColumn);
 
-            foreach (DataRow row in resultTable.Rows)
-            {
-                int total = 0;
-                for (int i = 1; i <= totalWeeks; i++)
-                {
-                    total += Convert.ToInt32(row[$"Week{i}"]);
-                }
-                row["TotalAppointments"] = total;
-            }
-
-
+            // Bind the data to the GridView
             ApplicationGridView.DataBind();
         }
-
-
         // Display the grand total
         protected void ApplicationGridView_RowDataBound(object sender, GridViewRowEventArgs e)
         {
