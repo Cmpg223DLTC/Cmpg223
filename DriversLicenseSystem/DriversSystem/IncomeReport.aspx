@@ -156,8 +156,9 @@
                         </asp:RadioButtonList>
                     </div>
 
-                    <!-- Report Section: Income Per Time Period -->
-                    <asp:Label ID="reportHeading" runat="server" CssClass="section-title">Income Per Time Period</asp:Label>
+                <!-- Report Section: Income Per Time Period -->
+<asp:Label ID="reportHeading" runat="server" CssClass="section-title"></asp:Label>
+
                     <asp:GridView ID="IncomeGridView" runat="server" CssClass="report-table" AutoGenerateColumns="False" ShowFooter="True" OnRowDataBound="IncomeGridView_RowDataBound">
                         <Columns>
                             <asp:BoundField DataField="Service_Descr" HeaderText="Service" />

@@ -13,9 +13,9 @@ using System.Text.RegularExpressions;
 
 namespace DriversSystem
 {
-     public partial class IncomeReport : System.Web.UI.Page
+    public partial class IncomeReport : System.Web.UI.Page
     {
-         DatabaseHelper dbHelper = new DatabaseHelper();
+        DatabaseHelper dbHelper = new DatabaseHelper();
         int grandTotal = 0;
 
         // Default time is current month
@@ -23,25 +23,54 @@ namespace DriversSystem
         static DateTime endDate = startDate.AddMonths(1).AddDays(-1);
         string startDateString = startDate.ToString("yyyy-MM-dd");
         string endDateString = endDate.ToString("yyyy-MM-dd");
+
         protected void Page_Load(object sender, EventArgs e)
         {
-                if (!IsPostBack)
-                {
-                    StartDateTextBox.Text = startDateString;
-                    EndDateTextBox.Text = endDateString;
-                    lblDateTime.Text = DateTime.Now.ToString("MMMM dd, yyyy HH:mm:ss");
-                    populateGridView();
-                }
+            if (!IsPostBack)
+            {
+                StartDateTextBox.Text = startDateString;
+                EndDateTextBox.Text = endDateString;
+                lblDateTime.Text = DateTime.Now.ToString("MMMM dd, yyyy HH:mm:ss");
+              
+                string sort = sortOrder.SelectedValue;
+
+               
+                updateReportHeading(startDate, endDate, sort);
+
+                populateGridView();
+            }
         }
 
         protected void FilterButton_Click(object sender, EventArgs e)
         {
             startDateString = StartDateTextBox.Text;
             endDateString = EndDateTextBox.Text;
+
+          
+            DateTime startDate = DateTime.Parse(startDateString);
+            DateTime endDate = DateTime.Parse(endDateString);
+
+          
+            string sort = sortOrder.SelectedValue;
+
+   
+            updateReportHeading(startDate, endDate, sort);
+
             populateGridView();
         }
 
-       protected void populateGridView()
+  
+        protected void updateReportHeading(DateTime startDate, DateTime endDate, string sortOrder)
+        {
+            reportHeading.Text = "Income Per Time Period from " + startDate.ToString("yyyy-MM-dd") +
+                                 " to " + endDate.ToString("yyyy-MM-dd") +
+                                 " sorted by " + sortOrder;
+        }
+
+        
+
+
+    protected void populateGridView()
        {
                 
             IncomeGridView.DataSource = null;

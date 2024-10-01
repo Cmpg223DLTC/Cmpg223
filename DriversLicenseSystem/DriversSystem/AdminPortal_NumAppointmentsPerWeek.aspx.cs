@@ -19,6 +19,7 @@ namespace DriversSystem
         static DateTime endDate = startDate.AddMonths(1).AddDays(-1);
         string startDateString = startDate.ToString("yyyy-MM-dd");
         string endDateString = endDate.ToString("yyyy-MM-dd");
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -26,6 +27,10 @@ namespace DriversSystem
                 StartDateTextBox.Text = startDateString;
                 EndDateTextBox.Text = endDateString;
                 lblDateTime.Text = DateTime.Now.ToString("MMMM dd, yyyy HH:mm:ss");
+
+               
+                updateWeeklyReportHeading(startDate, endDate);
+
                 populateGridView();
             }
         }
@@ -34,9 +39,22 @@ namespace DriversSystem
         {
             startDateString = StartDateTextBox.Text;
             endDateString = EndDateTextBox.Text;
+
+          
+            DateTime startDate = DateTime.Parse(startDateString);
+            DateTime endDate = DateTime.Parse(endDateString);
+
+            updateWeeklyReportHeading(startDate, endDate);
+
             populateGridView();
         }
 
+        protected void updateWeeklyReportHeading(DateTime startDate, DateTime endDate)
+        {
+            weeklyReportHeading.Text = "Weekly Appointments Report from " +
+                                       startDate.ToString("yyyy-MM-dd") +
+                                       " to " + endDate.ToString("yyyy-MM-dd");
+        }
         protected void populateGridView()
         {
             ApplicationGridView.Columns.Clear();

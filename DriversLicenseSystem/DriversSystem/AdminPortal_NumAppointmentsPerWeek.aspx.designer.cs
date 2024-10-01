@@ -60,6 +60,15 @@ namespace DriversSystem
         protected global::System.Web.UI.WebControls.Button FilterButton;
 
         /// <summary>
+        /// weeklyReportHeading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label weeklyReportHeading;
+
+        /// <summary>
         /// ApplicationGridView control.
         /// </summary>
         /// <remarks>

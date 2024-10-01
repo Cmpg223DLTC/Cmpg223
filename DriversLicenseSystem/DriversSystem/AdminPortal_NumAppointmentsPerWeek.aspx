@@ -148,9 +148,10 @@
                     <div class="form-group">
                         <asp:Button ID="FilterButton" runat="server" Text="Filter" CssClass="custom-btn" OnClick="FilterButton_Click" />
                     </div>
+                    <br />
 
                     <!-- Report Section: Weekly Appointments Report -->
-                    <h2 class="section-title">Weekly Appointments Report</h2>
+                    <asp:Label ID="weeklyReportHeading" runat="server" CssClass="section-title"></asp:Label>
                     <asp:GridView ID="ApplicationGridView" runat="server" CssClass="report-table" AutoGenerateColumns="False" ShowFooter="True" OnRowDataBound="ApplicationGridView_RowDataBound">
                         <Columns>
                            
