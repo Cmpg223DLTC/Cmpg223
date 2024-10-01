@@ -30,6 +30,7 @@ namespace DriversSystem
             if (!IsPostBack)
             {
                 ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.WebForms;
+
                 //Populate ServiceDropDown
                 String query = "SELECT Service_ID, Service_Descr FROM Service ORDER BY Service_Descr ASC";
                 using (SqlDataReader reader = dbHelper.ExecuteReader(query))
@@ -40,12 +41,45 @@ namespace DriversSystem
                         String Service_descr = reader["Service_Descr"].ToString();
                         ServiceDropdown.Items.Add(new ListItem(Service_descr, Service_id));
                     }
-                    
                 }
-                populateTimeSlot();
-            }
 
+                // Populate application details
+                populateApplicationDetails();
+            }
         }
+
+        protected void populateApplicationDetails()
+        {
+            // Fetch the application details for the client
+            string query = "SELECT Application.Service_ID, Application.Time_ID, Available_Time.Date " +
+                           "FROM Application " +
+                           "JOIN Available_Time ON Application.Time_ID = Available_Time.Time_ID " +
+                           "WHERE Client_ID = @ClientID AND IsAttended = 0";
+
+            SqlParameter[] param =
+            {
+        new SqlParameter("@ClientID", SqlDbType.Int) { Value = clientID }
+    };
+
+            DataTable dt = dbHelper.ExecuteQuery(query, param);
+            if (dt.Rows.Count > 0)
+            {
+                // Set selected service
+                string selectedServiceID = dt.Rows[0]["Service_ID"].ToString();
+                ServiceDropdown.SelectedValue = selectedServiceID;
+
+                // Set calendar selected date
+                DateTime selectedDate = Convert.ToDateTime(dt.Rows[0]["Date"]);
+                calendar.SelectedDate = selectedDate;
+                calendar.VisibleDate = selectedDate;
+
+                // Set selected time slot
+                populateTimeSlot();
+                string selectedTimeID = dt.Rows[0]["Time_ID"].ToString();
+                TimeslotRadioButtonList.SelectedValue = selectedTimeID;
+            }
+        }
+
 
         protected void calendar_SelectionChanged(object sender, EventArgs e)
         {
